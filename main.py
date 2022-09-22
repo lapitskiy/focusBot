@@ -19,7 +19,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = '1211481214:AAFRM472zZdcwlWIioUlD1KM1ja93VYWy_E'
+TOKEN = ''
+
 REQUEST_KWARGS={
     # "USERNAME:PASSWORD@" is optional, if you need authentication:
     'proxy_url': 'http://KEy2hn:YJzsyg@186.65.115.105:9425/',
