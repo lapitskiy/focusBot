@@ -9,13 +9,13 @@ from bot_class import *
 
 from bot_settings import settings
 
-import token
+import tokencfg
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = token.TOKEN
+TOKEN = tokencfg.TOKEN
 
 REQUEST_KWARGS={
     # "USERNAME:PASSWORD@" is optional, if you need authentication:
