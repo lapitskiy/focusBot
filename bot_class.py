@@ -3,9 +3,6 @@
 #
 from bot_settings import settings
 import threading
-import redis
-from time import sleep
-
 from bot_func import *
 
 
@@ -22,7 +19,6 @@ class ThreadData(threading.Thread):
         self.start_thread()
 
     def start_thread(self):
-        r = red.redis_db_check(12)
         while True:
             if settings.SHOW_MAIN_MENU: # меню ФЯ
                 settings.SHOW_MAIN_MENU = False
@@ -271,26 +267,3 @@ class ThreadData(threading.Thread):
         self.update = update
         self.context = context
 
-
-
-#
-# redis class
-#
-# проверяем последний день записи в редисе
-class Rediss:
-    def __init__(self):
-        self.db = 12
-
-    def redis_db_check(self, dbname):
-        try:
-            r = redis.StrictRedis(host='localhost', db=dbname)
-        except redis.exceptions.ResponseError:
-            print('redis err')
-        return r
-
-red = Rediss()
-
-
-#
-# Telegram class
-#

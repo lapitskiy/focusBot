@@ -1,25 +1,21 @@
-import os
 import logging
-import telegram.bot
 from telegram.ext import Updater, RegexHandler
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 
 from bot_func import *
 
-import redis
-
-#from bot_class import red
-
 from bot_class import *
 
 from bot_settings import settings
+
+import token
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = ''
+TOKEN = token.TOKEN
 
 REQUEST_KWARGS={
     # "USERNAME:PASSWORD@" is optional, if you need authentication:

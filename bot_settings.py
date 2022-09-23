@@ -1,6 +1,3 @@
-#bot settings.py
-import redis
-from distutils.util import strtobool
 
 class Global_Settings:
     def __init__(self):
@@ -65,12 +62,7 @@ class Global_Settings:
 
 
     def init(self):
-        try:
-            self.r = redis.StrictRedis(host='localhost', db=12)
-        except redis.exceptions.ResponseError:
-            print('redis err')
-        self._BUY = self.r.hget('setting', 'BUY').decode()
-        self._BUY = bool(self._BUY)
+        print('Bot start')
         #self.TELETIPE = self.r.hget('setting', 'TELETIPE').decode()
 
 
